@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ClearTasks = () => {
+const ClearTasks = ({ClearTasks}) => {
     return (
         <div className='clear'>
-            <button>Clear all tasks</button>
+            <button onClick={ClearTasks}>Clear all tasks</button>
         </div>
     )
 }

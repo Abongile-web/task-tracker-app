@@ -1,7 +1,7 @@
 import Header from './components/Header'
 import AddTask from './components/AddTask'
 import Task from './components/Task'
-import ClearTasks from './components/ClearTasks'
+// import ClearTasks from './components/ClearTasks'
 import {useState} from 'react'
 
 
@@ -11,16 +11,7 @@ function App() {
   const [showAdd, setShowAdd] = useState(false)
 
   //Store Tasks
-  const [tasks, setTasks] = useState([
-    // {
-    //   text: 'Doctors appointment',
-    //   day: 'Feb 5th at 09:00am'
-    // },
-    // {
-    //   text: 'Doctors appointment',
-    //   day: 'Feb 5th at 09:00am'
-    // }
-  ])
+  const [tasks, setTasks] = useState([])
 
   // Add Task
   const addTask = (task) => {
@@ -33,6 +24,17 @@ function App() {
     setTasks([...tasks, newTask])
   }
 
+  //Delete Task
+  const deleteTask = (id) => {
+    setTasks(tasks.filter((task) => task.id !== id))
+  }
+
+  //Delete all Tasks
+  // const clearAll = () => {
+  //   console.log('clear')
+  //   setTasks([])
+  // }
+
   return (
     <div className='container'>
       <div className="view">
@@ -42,10 +44,10 @@ function App() {
         {/* if show add is true */}
         {showAdd && <AddTask onAdd={addTask} />} 
 
-        <Task tasks={tasks}/>
+        <Task tasks={tasks} onDelete={deleteTask}/>
       </div>
 
-        <ClearTasks />
+        {/* <ClearTasks clearTasks={clearAll} /> */}
       </div>
     </div>
   );
