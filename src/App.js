@@ -4,9 +4,34 @@ import Task from './components/Task'
 import ClearTasks from './components/ClearTasks'
 import {useState} from 'react'
 
+
+
 function App() {
   // Toggle add tasks
   const [showAdd, setShowAdd] = useState(false)
+
+  //Store Tasks
+  const [tasks, setTasks] = useState([
+    // {
+    //   text: 'Doctors appointment',
+    //   day: 'Feb 5th at 09:00am'
+    // },
+    // {
+    //   text: 'Doctors appointment',
+    //   day: 'Feb 5th at 09:00am'
+    // }
+  ])
+
+  // Add Task
+  const addTask = (task) => {
+    console.log(task)
+    const id = Math.floor(Math.random() * 10000) + 1
+    console.log(id)
+
+    const newTask = {id, ...task}
+
+    setTasks([...tasks, newTask])
+  }
 
   return (
     <div className='container'>
@@ -15,9 +40,9 @@ function App() {
 
       <div className="allTasks">
         {/* if show add is true */}
-        {showAdd && <AddTask />} 
+        {showAdd && <AddTask onAdd={addTask} />} 
 
-        <Task />
+        <Task tasks={tasks}/>
       </div>
 
         <ClearTasks />
