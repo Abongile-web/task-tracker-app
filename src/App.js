@@ -8,7 +8,7 @@ import {useState} from 'react'
 
 function App() {
   // Toggle add tasks
-  const [showAdd, setShowAdd] = useState(false)
+  const [showAdd, setShowAdd] = useState(true)
 
   //Store Tasks
   const [tasks, setTasks] = useState([])
