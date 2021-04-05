@@ -4,12 +4,18 @@
   box-sizing: border-box;
 }
 
+body {
+  font-family: "Raleway", sans-serif;
+  color: #33313b;
+}
+
 button {
   outline: none;
+  font-family: "Raleway", sans-serif;
 }
 
 .container {
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-color: #33313b;
   min-height: 100vh;
   width: 100%;
   display: flex;
@@ -36,7 +42,8 @@ header {
 
 header button {
   padding: 0 20px;
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-color: #834c69;
+  color: white;
   border: none;
   border-radius: 5%;
   cursor: pointer;
@@ -60,7 +67,8 @@ form input {
 
 form button {
   padding: 10px 0;
-  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  background-color: #834c69;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -73,8 +81,8 @@ form button {
   align-items: center;
   margin-bottom: 5%;
   padding: 10px;
-  background-color: rgb(249, 249, 249);
-  border-left: turquoise solid 3px;
+  background-color: #f2f2f2;
+  border-left: #834c69 solid 3px;
   box-shadow: 2px 2px rgb(237, 237, 237);
 }
 
@@ -101,9 +109,10 @@ form button {
   cursor: pointer;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 1024px) {
   .view {
-    width: 90%;
-    border-radius: 4px;
+    width: 100%;
+    border-radius: 0px;
+    margin: 0;
   }
 }
